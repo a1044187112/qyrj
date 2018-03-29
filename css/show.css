@@ -1,0 +1,36 @@
+.cases{
+	max-width: 1200px;
+	margin: auto;
+	padding-top: 40px;
+	padding-bottom: 80px;
+}
+.cases .case_title{
+	font-size: 22px;
+	font-weight: 600;
+	padding-left: 10px;
+}
+.cases .case_class,
+.cases .case_project{
+	color:000;
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.cases .case_class span,
+.cases .case_project span{
+	color: #696969;
+}
+.cases .cases_remind{
+	margin-top: 20px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+.cases .img_item{
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+}
+@media only screen and (max-width: 640px) {
+	.cases .img_item{
+		width: 94%;
+	}
+}

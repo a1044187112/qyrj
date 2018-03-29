@@ -1,0 +1,92 @@
+.con .con_menu{
+	max-width: 1200px;
+	margin: auto;
+	text-align: center;
+}
+.con .con_menu .con_menu_i{
+	display: inline-block;
+	margin-top: 20px;
+}
+.con .con_menu .con_menu_i a{
+	display: inline-block;
+	height: 38px ;
+	line-height: 38PX;
+	color: #696969;
+	font-size: 15px;
+	border: 1px solid #EFEFEF;
+	margin-left: 20px;
+	padding: 0 20px;
+	text-decoration: none;
+}
+.con .con_menu .con_menu_i.active a{
+	border: 1px solid #fb8102;
+	color: #FB8102;
+}
+.con .con_menu .con_menu_i:hover a{
+	border: 1px solid #fb8102;
+	color: #FB8102;
+}
+.web{
+	max-width: 1200px;
+	margin: auto;
+	padding-bottom: 100px;
+}
+.web .build_t{
+	font-size: 24px;
+	font-weight: 600;
+	padding: 0 10px;	
+}
+.web .build_t span{
+	color: #969696;
+	margin-left: 10px;
+	font-size: 14px;
+}
+.web .build_t1{
+	color: #2b2b2b;
+	font-size: 16px;
+	padding: 0 10px;
+}
+.web .build_t1 span{
+	color: #FF7417;
+	font-weight: 600;
+}
+.web .build_intro{
+	font-size: 12px;
+	color: #969696;
+	padding: 0 10px;
+}
+.web .build_model{
+	text-decoration: none;
+	cursor: pointer;
+	padding: 0 10px;
+}
+.web .build_l{
+	width: 100%;
+	margin-top: 20px;
+}
+.web .build_l .build_i{
+	min-height: 48px;
+	line-height: 24px;
+	text-align: center;
+}
+.web .build_l .build_i:first-child{
+	background: rgb(236,242,222);
+	height: 48px;
+	line-height: 48px;
+}
+.web .build_l .build_i span.build_i_t{
+	display: inline-block;
+}
+.web .build_l .build_i span.build_i_i{
+	display: inline-block;
+}
+@media only screen and  (max-width: 640px) {
+	.web .build_l .build_i{
+		text-align: left;
+		padding-left: 10px;
+	}
+	.web .build_l .build_i span.build_i_t{
+		font-weight: 600;
+		padding: 0;
+	}
+}
