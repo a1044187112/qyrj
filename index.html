@@ -292,11 +292,11 @@
 					<img class="col-lg-6" src="img/contact_fl.png" />
 					<div class="contact_l col-lg-6">
 						<p class="cotact_title">姓名/NAME</p>
-						<div class="contact_z"><input type="text" /></div>
-						<p class="cotact_title">姓名/NAME</p>
-						<div class="contact_z"><input type="text" /></div>
-						<p class="cotact_title">姓名/NAME</p>
-						<div class="contact_z"><textarea></textarea></div>
+						<div class="contact_z"><input class="contact_name" value="小王" type="text" /></div>
+						<p class="cotact_title">电话/NAME</p>
+						<div class="contact_z"><input class="contact_phone" value="12345678911" type="text" /></div>
+						<p class="cotact_title">留言/NAME</p>
+						<div class="contact_z"><textarea class="contact_msg">test</textarea></div>
 						<button class="contact_submit">提交</button>
 						<span class="contact_remind">我们回在2个工作日内回复您，您的资料我们回保密处理</span>
 					</div>
@@ -320,6 +320,26 @@
 			slide.entry(imgData);
 			Index.init();
 		}
+		$(".contact_submit").click(function(){
+			console.log((new Date()).getTime());
+			var name = $(".contact_name").val();
+			var phone = $(".contact_phone").val();
+			var msg = $(".contact_msg").text();
+			console.log(name);
+			if(name==""){
+				alert("请输入姓名！");
+			}else if(phone.length!=11){
+				alert("请输入电话！");
+			}else{
+				var data = {
+					"name":name, "phone":phone, "msg":msg
+				};
+				$.post("http://localhost:8081/user",data,function(data){
+					console.log(data);
+				});
+			}
+		});
+		
 	</script>
 
 </html>
