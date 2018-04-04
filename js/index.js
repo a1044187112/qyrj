@@ -14,7 +14,6 @@ var Index = {
 	},
 	eventListener : {
 		addEvent(){
-			console.log(66);
 			$(".xs_menu").click(function(event){
 				event.stopPropagation();
 				if($(this).parent().hasClass("active")){

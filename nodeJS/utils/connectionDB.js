@@ -8,8 +8,8 @@ var connection = mysql.createConnection({  // 创建连接  确定参数
 	database : "qyrj",
 	port : "3306",
 }); 	
-connection.connect(); // 开始连接
-db.query = function sqlQuery(sql,param,fn){
+connection.connect(); // 
+db.sqlAddData = function sqlAddData(sql,param,fn){  // 添加
 		
 		connection.query(sql,param,function(error,results,fields){
 			if(error){
@@ -20,14 +20,15 @@ db.query = function sqlQuery(sql,param,fn){
 		});
 	}
 
-//db.insert = function sqlInsert(sql){
-//	connection.insert(sql,function(error,results,fields){
-//			if(error){
-//				throw error;
-//			}
-//			console.log(results);
-//				
-//		});
-//}
+db.query = function sqlQuery(sql,fn){
+	connection.query(sql,function(error,results,fields){
+			if(error){
+				throw error;
+			}
+			console.log(results);
+			fn(results);	
+		});
+}
+ 
 
 module.exports = db;

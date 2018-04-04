@@ -58,12 +58,16 @@ var slide = {
 		slide.moveDistance = -(slide.count-i)*100;  // 移动的距离
 		slide.everyImgAnim();	
 		slide.count = i; // 当前显示的图片为当前点击id
+		slide.imgPlaying();
+		// 当点击图片当前次滚动完成之后要将以后每一次滚动的距离改为正数  如果是点击后动画是左移的 slide.moveDistance值为负  
+		//如果不修改为正数  将影响后面的滚动方向
+		slide.moveDistance = 100; 
 	},
 
 	addEvent: {
 		eventList() {
 			window.onfocus = function(){ // 浏览器窗口获得焦点
-				this.imgPlaying();
+				slide.imgPlaying();
 			},
 			window.onblur = function(){ // 浏览器窗口失去焦点
 				clearInterval(slide.fTimer);
@@ -84,7 +88,6 @@ var slide = {
 			} else if(slide.count < i) { // 当前显示的图片id小于点击的圆点的id  要向左移
 				slide.clickPro(i);
 			} else { // 当前显示的图片是点击的圆点对应的图片  不处理
-
 			}
 			// 获取当前显示的图片是第几张
 
